@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # author: fanchuang
-# DateTime:2021/3/1 0001 20:23
+# DateTime:2021/3/1 0001 20:23 
 # contact: fanchuangwater@gmail.com
 # about: 运行此文件 = 下载代理 + 校验代理。
 
@@ -10,6 +10,7 @@ from my_proxy.spiders.fate0_proxy import SecondProxy
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
 
+# todo 有必要按照匿名度，再次筛选一下。毕竟目前这批代理的质量不是很好。质量差的很啊。
 # todo 目前有4个爬虫网站可以用，以后再发现其他的，再添加
 
 """ 运行结果:
@@ -29,7 +30,7 @@ def get_raw():
     crawler.crawl('p2')
     crawler.crawl('p3')
     crawler.start()
-    
+
     s = SecondProxy()
     s.run()
 

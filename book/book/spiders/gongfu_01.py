@@ -2,11 +2,10 @@
 # author: fanchuang
 # DateTime:2021/2/25 0025 18:23 
 # contact: fanchuangwater@gmail.com
-# about:
+# about: 下载武侠小说、  http://www.jinyongwang.com/ntian/
 
 
 import re
-import warnings
 import scrapy
 from bs4 import BeautifulSoup
 from book.items import BookItem
@@ -14,7 +13,7 @@ from book.items import BookItem
 
 # 第一个版本 尝试自己来自写，看看如何下载一本书、
 class SongSpider(scrapy.Spider):
-    name = 'dog'
+    name = 'g1'
     allowed_domains = ['book.sbkk8.com']
     start_urls = ['http://book.sbkk8.com/xiandai/jinyong/shediaoyingxiongchuan/200826.html']
 
@@ -32,5 +31,4 @@ class SongSpider(scrapy.Spider):
         next_page = soup.find_all('a', attrs={'class': 'pagedaohang'})[1].get('href')
         if next_page:
             next_page_url = 'http://book.sbkk8.com' + next_page
-            # warnings.warn("next page url is ", next_page_url)
             yield scrapy.Request(next_page_url, callback=self.parse)

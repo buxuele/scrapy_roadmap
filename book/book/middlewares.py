@@ -7,6 +7,18 @@ from scrapy import signals
 
 # useful for handling different item types with a single interface
 from itemadapter import is_item, ItemAdapter
+import random
+from pymongo import MongoClient
+
+
+class ProxyMiddleware(object):
+    def __init__(self):
+        self.data = MongoClient('localhost', 27017)['proxies_db']['world'].find()
+        self.proxies = [f'{dic["protocol"].lower()}://{dic["ip"]}:{dic["port"]}' for dic in self.data]
+
+    def process_request(self, request, spider):
+        proxy = random.choice(self.proxies)
+        request.meta['proxy'] = proxy
 
 
 class BookSpiderMiddleware:

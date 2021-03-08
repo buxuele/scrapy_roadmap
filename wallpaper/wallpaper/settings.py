@@ -12,7 +12,7 @@ CONCURRENT_REQUESTS_PER_DOMAIN = 20
 CONCURRENT_REQUESTS_PER_IP = 20
 
 # 以下需要手动修改。
-IMAGES_STORE = 'E:\Work_500'
+IMAGES_STORE = r'E:\爬虫结果\Bedroom'
 
 ITEM_PIPELINES = {
    'wallpaper.pipelines.WallpaperPipeline': 300,
@@ -22,6 +22,9 @@ DOWNLOADER_MIDDLEWARES = {
    'wallpaper.middlewares.WallpaperDownloaderMiddleware': 543,
 }
 
+# 异常状态码的处理
+RETRY_TIMES = 5
+RETRY_HTTP_CODES = [500, 502, 503, 504, 522, 524, 408, 429, 520]
 
 DEFAULT_REQUEST_HEADERS = {
   'Accept': '*/*',

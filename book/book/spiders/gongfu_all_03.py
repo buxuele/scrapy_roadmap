@@ -14,7 +14,7 @@ from book.items import BookItem
 
 # 在 04 的基础上，下载某个专题内全部的书。就是在原来的基础上再加一层。 yes!
 class SongSpider(scrapy.Spider):
-    name = 'ott'
+    name = 'g3'
     allowed_domains = ['book.sbkk8.com']
     # start_urls = ['http://book.sbkk8.com/xiandai/']       # 现代
     start_urls = ['http://book.sbkk8.com/gudai/tangshi/']   # 唐诗
@@ -55,7 +55,6 @@ class SongSpider(scrapy.Spider):
         next_page = soup.find_all('a', attrs={'class': 'pagedaohang'})[1].get('href')
         if next_page:
             next_page_url = 'http://book.sbkk8.com' + next_page
-            # warnings.warn("next page url is ", next_page_url)
             yield scrapy.Request(next_page_url, callback=self.parse_text, meta={'book_name': same_book_name})
 
 

@@ -8,7 +8,6 @@ from scrapy import Request
 # class BookPipeline(FilesPipeline):
 class BookPipeline:
     def process_item(self, item, spider):
-
         # 1. 尝试按照每个章节，单独写入一个文件。 yes!
         # with open(f"{item['chapter_title']}.txt", 'w', encoding='utf-8') as f:
         #     f.write(item['book_content'])
@@ -23,10 +22,11 @@ class BookPipeline:
         # return item
 
         # 3. 书名也需要作为一个变量传递进来。 这个更改 文件存储目录也是很方便的。
-        store_path = r'E:\爬虫结果\古代文学'
+        # store_path = r'E:\爬虫结果\99藏书网\爱丽丝门罗'
+        store_path = r'E:\爬虫结果\99藏书网\诺贝尔文学奖'
         b_name = item['book_name'] + '.txt'
-        file_name = f'{store_path}/{b_name}'
-        with open(file_name, 'a+', encoding='utf-8') as f:
+        file_name = f'{store_path}\\{b_name}'
+        with open(file_name, 'a', encoding='utf-8') as f:
             f.write(item['chapter_title'].strip())
             f.write('\n' * 2)
             f.write(item['chapter_content'].strip())

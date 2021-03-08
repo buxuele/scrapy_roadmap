@@ -13,9 +13,9 @@ from book.items import BookItem
 
 # yes!
 # 这样就做到了： 下载多本书 + 同时保证章节是按顺序的。
-# 注意递归的过程中使用 meta 传递同样的书名。不然会找不到书名。
+# 注意递归的过程中传递同样的书名。不然会找不到书名。
 class SongSpider(scrapy.Spider):
-    name = 'cat'
+    name = 'g2'
     allowed_domains = ['book.sbkk8.com']
     start_urls = ['http://book.sbkk8.com/xiandai/jinyong/shediaoyingxiongchuan/',
                   'http://book.sbkk8.com/xiandai/jinyong/shendiaoxialv/',
