@@ -3,5 +3,11 @@ __pycache__/
 venv/
 .idea/
 **/.scrapy/
+utils/
 
 **.log
+
+ret.json
+ret2.json
+ZZZ.py
+delete_me.py

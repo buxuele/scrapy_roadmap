@@ -11,7 +11,7 @@ from my_proxy.items import MyProxyItem
 
 
 class HuanProxySpider(scrapy.Spider):
-    name = 'p3'
+    name = 'huan'
     allowed_domains = ['ip.ihuan.me']
 
     #  国内的代理，最好是请求这个地址。不确定是否会修改。如果需要大量的国内代理可以选这个。
@@ -45,6 +45,7 @@ class HuanProxySpider(scrapy.Spider):
         base = "https://ip.ihuan.me/"
         if next_page:
             yield scrapy.Request(url=base+next_page, callback=self.parse)
+
 
 
 

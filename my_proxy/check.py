@@ -34,10 +34,6 @@ class CheckProxy:
         resp = requests.get(target)
         return resp.json()["origin"]
 
-    def check_repeat(self):
-        # todo 也许不需要了。later!
-        pass
-
     # 这种删除方式不科学，导致我的代理没法用。还是需要再看看。todo
     def check_status(self, dic):
         url = "http://httpbin.org/ip"
@@ -107,9 +103,16 @@ class CheckProxy:
         self.db['china'].insert_many(cn)
         self.db['world'].insert_many(other)
 
+    # 临时测试用的。
+    def drop_data(self):
+        if "world" in self.db.list_collection_names():
+            self.db.drop_collection("world")
+            self.db.drop_collection("china")
+            self.db.drop_collection("proxies_coll")
+
 
 if __name__ == '__main__':
     s = CheckProxy()
-    s.run()
+    s.drop_data()
 
 

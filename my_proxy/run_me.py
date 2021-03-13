@@ -10,32 +10,26 @@ from my_proxy.spiders.fate0_proxy import SecondProxy
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
 
-# todo 有必要按照匿名度，再次筛选一下。毕竟目前这批代理的质量不是很好。质量差的很啊。
-# todo 目前有4个爬虫网站可以用，以后再发现其他的，再添加
 
-""" 运行结果:
-Origin proxy nums:  800
-Good proxy nums:  231
-all:  231
-china:  96
-world:  135
-"""
+def special():
+    s = SecondProxy()  # github/fate0  这个代理的质量也是很好的。而且数量稍微多一些。
+    s.run()
 
 
 def get_raw():
     settings = get_project_settings()
     crawler = CrawlerProcess(settings)
+    crawler.crawl('small')      # 数量虽然少的，但是质量很高。都是能用的，没有虚假的。
 
-    crawler.crawl('p1')
-    crawler.crawl('p2')
-    crawler.crawl('p3')
+    # crawler.crawl('xila')     # 响应慢。
+    # crawler.crawl('huan')     # 我怀疑这个是坏掉的。
+    # crawler.crawl('kuai')     # 我怀疑这个是坏掉的。
     crawler.start()
 
-    s = SecondProxy()
-    s.run()
+    special()
 
 
-# 下载完成之后，立马校验就行了啊。
+# 校验
 def happy():
     ck = CheckProxy()
     ck.run()

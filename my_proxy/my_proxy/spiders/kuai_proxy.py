@@ -11,7 +11,7 @@ from my_proxy.items import MyProxyItem
 
 
 class SmallProxySpider(scrapy.Spider):
-    name = 'p2'
+    name = 'kuai'
     allowed_domains = ['kuaidaili.com']
     # inha 这里全是国内的代理
     start_urls = [f'https://www.kuaidaili.com/free/inha/{x}' for x in range(1, 11)]

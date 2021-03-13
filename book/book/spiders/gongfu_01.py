@@ -10,7 +10,8 @@ import scrapy
 from bs4 import BeautifulSoup
 from book.items import BookItem
 
-
+# todo 再找点好的网站试试看。
+# 这个网站的文字排版与问题，读天龙八部的时候，错别字以及杂乱的标点令人很痛苦。
 # 第一个版本 尝试自己来自写，看看如何下载一本书、
 class SongSpider(scrapy.Spider):
     name = 'g1'

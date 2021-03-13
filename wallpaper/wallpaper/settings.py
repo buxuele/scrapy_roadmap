@@ -7,12 +7,13 @@ ROBOTSTXT_OBEY = False
 COOKIES_ENABLED = False    # 可以防止被ban
 
 DOWNLOAD_DELAY = 1
-CONCURRENT_REQUESTS = 20
-CONCURRENT_REQUESTS_PER_DOMAIN = 20
-CONCURRENT_REQUESTS_PER_IP = 20
+CONCURRENT_REQUESTS = 10
+CONCURRENT_REQUESTS_PER_DOMAIN = 10
+CONCURRENT_REQUESTS_PER_IP = 10
 
+TAG_NAME = "cat"       # book, shark library dog, todo cat  city, lake, mall, music, park, china,
 # 以下需要手动修改。
-IMAGES_STORE = r'E:\爬虫结果\Bedroom'
+IMAGES_STORE = f'E:\爬虫结果\\{TAG_NAME.capitalize()}400'
 
 ITEM_PIPELINES = {
    'wallpaper.pipelines.WallpaperPipeline': 300,

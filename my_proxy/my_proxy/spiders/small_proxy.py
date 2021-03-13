@@ -21,7 +21,7 @@ from my_proxy.items import MyProxyItem
 
 class SmallProxySpider(scrapy.Spider):
     # 这里打算多搞几个代理的网站，最后整合到一起。todo
-    name = 'p1'
+    name = 'small'
     allowed_domains = ['ip.jiangxianli.com']
 
     # 这里还是使用直接请求api的形式。
