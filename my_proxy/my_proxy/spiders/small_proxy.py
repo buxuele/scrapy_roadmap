@@ -20,14 +20,12 @@ from my_proxy.items import MyProxyItem
 
 
 class SmallProxySpider(scrapy.Spider):
-    # 这里打算多搞几个代理的网站，最后整合到一起。todo
     name = 'small'
     allowed_domains = ['ip.jiangxianli.com']
 
-    # 这里还是使用直接请求api的形式。
     def start_requests(self):
         base_url = 'https://ip.jiangxianli.com/api/proxy_ips'
-        payloads = [{"page": c, "country": "中国", "order_by": "speed"} for c in range(1, 6)]
+        payloads = [{"page": c, "country": "中国", "order_by": "speed"} for c in range(1, 10)]
         for p in payloads:
             yield scrapy.Request(base_url, body=json.dumps(p))
 

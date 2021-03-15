@@ -4,24 +4,20 @@
 # contact: fanchuangwater@gmail.com
 # about:
 
-
 import re
 import scrapy
 from bs4 import BeautifulSoup
 from book.items import BookItem
 
-
 """
 1. 九九藏书网 https://www.99csw.com./index.php
-2. ！！！！其实这个网站是有点意思的。因为每一个内容页，源码里面隐藏了一些 [脏东西]， 所以需要想办法来解除它。这里还没解决。！！！！
-3. 
+2. 书的内容里面加盐了。这部分其实很有趣的。需用执行 JS 来净化一下。todo
 """
 
 
 class CSWSpider(scrapy.Spider):
     name = 'c1'
-    allowed_domains = ['99csw.com']
-
+    # allowed_domains = ['99csw.com']
     # 爱丽丝门罗
     # start_urls = ['https://www.99csw.com/book/search.php?type=author&keyword=%E8%89%BE%E4%B8%BD%E4%B8%9D%C2%B7%E9%97%A8%E7%BD%97']
 
@@ -30,9 +26,10 @@ class CSWSpider(scrapy.Spider):
 
     def parse(self, response, **kwargs):
         base = 'https://www.99csw.com'
-        soup = BeautifulSoup(response.text, "lxml")
-        junk = soup.find_all("a", attrs={"class": "Aimg"})
-        for a in junk:
+        soup = BeautifulSoup(response.text, "lxml")   # utf-8
+        junk = soup.find("ul", attrs={"class": "list_box"})
+        print(junk)
+        for a in junk.find_all('a',attrs={"class": "Aimg"}):
             u = a.get("href")
             yield scrapy.Request(base+u, callback=self.parse_book)
 

@@ -28,12 +28,12 @@ DEFAULT_REQUEST_HEADERS = {
 
 # Done! 重写这部分， 自己来改写请求头部信息 需要修改为 MyUserAgentMiddleware
 DOWNLOADER_MIDDLEWARES = {
-   'my_proxy.middlewares.MyUserAgentMiddleware': 543,
+   'my_proxy.middlewares.MyUserAgentMiddleware': 510,
 }
 
 # Done! 需要修改为 MongoPipeline
 ITEM_PIPELINES = {
-   'my_proxy.pipelines.MongoPipeline': 300,
+   'my_proxy.pipelines.MongoPipeline': 200,
 }
 
 # LOG_FILE = f"{str(int(time.time()))}.log"

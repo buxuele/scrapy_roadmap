@@ -5,6 +5,7 @@
 # about:
 from scrapy import cmdline
 # cmdline.execute("scrapy crawl dou".split())
+# cmdline.execute("scrapy crawl hu".split())
 
-cmdline.execute("scrapy crawl hu".split())
+cmdline.execute("scrapy crawl zhihu".split())
 

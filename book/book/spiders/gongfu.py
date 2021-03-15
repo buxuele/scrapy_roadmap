@@ -12,7 +12,10 @@ from pprint import pprint
 from book.items import BookItem
 
 
-# 在 04 的基础上，下载某个专题内全部的书。就是在原来的基础上再加一层。 yes!
+# 在 04 的基础上，下载某个专题内全部的书。
+# 这个网站的文字排版与问题，读天龙八部的时候，错别字以及杂乱的标点令人很痛苦。
+# 下载多本书 + 同时保证章节是按顺序的。
+# 注意递归的过程中传递同样的书名。不然会找不到书名。
 class SongSpider(scrapy.Spider):
     name = 'g3'
     allowed_domains = ['book.sbkk8.com']
@@ -26,7 +29,6 @@ class SongSpider(scrapy.Spider):
         all_book_urls = soup.find_all('a', attrs={'class': "ablum"})
         for i in all_book_urls:
             book_home = self.base_url + i.get("href")
-
             # 其实这里也可以传递 类别，比如像 现代2个字。方便按照文件夹来分类。
             yield scrapy.Request(book_home, callback=self.pase_book)
 

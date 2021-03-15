@@ -12,7 +12,7 @@ from scrapy.utils.project import get_project_settings
 
 
 def special():
-    s = SecondProxy()  # github/fate0  这个代理的质量也是很好的。而且数量稍微多一些。
+    s = SecondProxy()  # github/fate0   数量多，质量差！！！！
     s.run()
 
 

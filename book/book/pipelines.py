@@ -23,7 +23,7 @@ class BookPipeline:
 
         # 3. 书名也需要作为一个变量传递进来。 这个更改 文件存储目录也是很方便的。
         # store_path = r'E:\爬虫结果\99藏书网\爱丽丝门罗'
-        store_path = r'E:\爬虫结果\99藏书网\诺贝尔文学奖'
+        store_path = r'E:\爬虫结果\电子书\努努书坊_诺贝尔文学奖'
         b_name = item['book_name'] + '.txt'
         file_name = f'{store_path}\\{b_name}'
         with open(file_name, 'a', encoding='utf-8') as f:
