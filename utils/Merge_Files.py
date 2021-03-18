@@ -10,8 +10,8 @@ import shutil
 import pathlib
 
 
-origin_path = 'E:\爬虫结果\图片\RTX_2060'
-target_path = 'E:\爬虫结果\图片\\new'
+origin_path = 'E:\爬虫结果\图片\RTX_2070'
+target_path = 'E:\爬虫结果\图片\\000'
 
 
 def move_files():

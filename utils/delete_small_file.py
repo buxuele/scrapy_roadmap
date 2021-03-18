@@ -13,5 +13,5 @@ def delete_stuff(path, file_size):
 
 
 if __name__ == '__main__':
-    my_path = r"E:\爬虫结果\图片\new"
-    delete_stuff(my_path, 100)    # 传入文件路径，文件大小的阈值 单位是 kb
+    my_path = r"E:\爬虫结果\图片\000"
+    delete_stuff(my_path, 200)    # 传入文件路径，文件大小的阈值 单位是 kb

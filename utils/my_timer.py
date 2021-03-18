@@ -4,9 +4,14 @@ import time
 # 这个是常用的时间显示方式
 def chinese_time():
     # print(datetime.now())         # 2020-12-31 19:40:58.431721
+    pretty_time = time.strftime("%Y-%m-%d %H:%M:%S")    # # 2020-12-31 19:40:58  str
+    print(pretty_time)
+    return pretty_time
 
-    pretty_time = time.strftime("%Y-%m-%d %H:%M:%S")
-    # print(pretty_time)          # 2020-12-31 19:40:58
+
+def log_time():
+    pretty_time = time.strftime("%Y-%m-%d_%H-%M-%S")
+    print(pretty_time)
     return pretty_time
 
 
@@ -28,5 +33,6 @@ def print_nums():
 
 
 if __name__ == '__main__':
-    print_nums()        # Cost: 3.04231333732605 seconds on print_nums
+    chinese_time()
+    log_time()
 

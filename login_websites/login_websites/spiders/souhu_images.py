@@ -11,13 +11,10 @@ import scrapy
 from scrapy import Request
 from bs4 import BeautifulSoup
 from login_websites.items import SouhuItem
+from utils.secret import sohu_cookies
 
 """
-关于 article-url 与 api-url 之间有2点需要注意:
-1. 从作者的主页（目前）还无法直接获取这个作者的id, 但是随便从作者的一个一篇文章入手，则可以获取该作者的 id.
-   因此需要传入作者的任意一篇文章的 url,即可。
-2. api-url 这里的secretStr，这里开始吓我一跳，实际上不加上也没事的，一样能取到数据。
-3. 另外听说搜狐限定只能从 api 中取出 1000 条数据，待验证。
+从任意一篇文章入手，获取作者 id， 进而构造api-url, 进而获取全部内容
 """
 
 
@@ -26,8 +23,7 @@ class SohuSpider(scrapy.Spider):
     allowed_domains = ['sohu.com']
 
     url = 'https://www.sohu.com/a/453502899_584699?spm=smpc.author.fd-d.32.1615601091157zDkhATv'  # 书法
-    str_cookies = 'SUV=1599150263935ncd246; gidinf=x099980109ee12100ee2de45a0006b576830a79ffbea; _muid_=1609058969178956; OUTFOX_SEARCH_USER_ID_NCOO=1531278692.9789631; IPLOC=CN3101; t=1615588161292; reqtype=pc'
-
+    str_cookies = sohu_cookies
     @staticmethod
     def make_cookies(str_cookies):
         # 目前还是写一个解析的函数。

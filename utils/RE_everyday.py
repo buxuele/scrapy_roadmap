@@ -30,10 +30,29 @@ def html_url(url=None, html_file=None):
             st.add(temp)
 
     for p in list(st):
+        print(p)
         with open("ret.txt", 'a') as g:
             g.write(p + ',')
             g.write('\n')
-    return list(st)
+
+
+# 去除重复的域名。
+# 1. 从自己的 pac 配置选项中选择全部的域名，复制到 ret.txt
+# 2. 运行此文件，得到没有重复的域名。
+def remove_dup():
+    ret = set()
+    with open('ret.txt', 'r') as f:
+        data = f.read()
+        print("初始域名个数: ", len(data.split("\n")))
+        for i in data.split('\n'):
+            if i not in ret:
+                ret.add(i)
+
+    print("不重复的域名个数: ", len(ret))
+    print(ret)
+    with open('ret.txt', 'w') as g:
+        for x in list(ret):
+            g.write(x + '\n')
 
 
 if __name__ == '__main__':
@@ -42,5 +61,7 @@ if __name__ == '__main__':
 
     # u = "http://pb.7mla.xyz/2048/read.php?tid-3185463-fpage-2.html"
     # html_url(url=u)
+
+    # remove_dup()
 
 

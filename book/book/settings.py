@@ -5,7 +5,7 @@ SPIDER_MODULES = ['book.spiders']
 NEWSPIDER_MODULE = 'book.spiders'
 
 ROBOTSTXT_OBEY = False
-COOKIES_ENABLED = False
+COOKIES_ENABLED = True
 FEED_EXPORT_ENCODING = 'utf-8'
 
 ITEM_PIPELINES = {
@@ -19,9 +19,9 @@ DOWNLOADER_MIDDLEWARES = {
 }
 
 DOWNLOAD_DELAY = 0
-CONCURRENT_REQUESTS = 2
-CONCURRENT_REQUESTS_PER_IP = 2
-CONCURRENT_REQUESTS_PER_DOMAIN = 2
+CONCURRENT_REQUESTS = 5
+CONCURRENT_REQUESTS_PER_IP = 5
+CONCURRENT_REQUESTS_PER_DOMAIN = 5
 
 # 异常状态码的处理
 RETRY_TIMES = 2
@@ -34,12 +34,18 @@ DEFAULT_REQUEST_HEADERS = {
   'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36',
 }
 
+# 使用 selenium
+SELENIUM_DRIVER_NAME = 'chrome'
+SELENIUM_DRIVER_PATH = 'D:\chromedriver\chromedriver.exe'
+SELENIUM_HEADLESS = True
+SELENIUM_DRIVER_PAGE_LOAD_TIMEOUT = 30
 
-HTTPCACHE_ENABLED = True
-HTTPCACHE_EXPIRATION_SECS = 0
-HTTPCACHE_DIR = 'httpcache'
-HTTPCACHE_IGNORE_HTTP_CODES = []
-HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+# HTTPCACHE_ENABLED = True
+# HTTPCACHE_EXPIRATION_SECS = 0
+# HTTPCACHE_DIR = 'httpcache'
+# HTTPCACHE_IGNORE_HTTP_CODES = []
+# HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 # 日志 log  调试的时候，最好还是不要用log 文件。
 # LOG_FILE = f"{str(int(time.time()))}.log"

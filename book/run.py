@@ -6,5 +6,5 @@
 
 from scrapy import cmdline
 
-cmdline.execute("scrapy crawl k1".split())
+cmdline.execute("scrapy crawl c1".split())
 

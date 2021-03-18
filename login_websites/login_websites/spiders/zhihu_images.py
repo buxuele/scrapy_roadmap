@@ -9,6 +9,7 @@ import json
 import scrapy
 from scrapy import Request
 from login_websites.items import DoubanItem
+from utils.secret import zhihu_cookies
 
 
 # 1. 爬取一个用户的全部图片。
@@ -18,7 +19,6 @@ class ZhihuSpider(scrapy.Spider):
     name = 'zhihu'
     allowed_domains = ['douban.com']
     url = 'https://www.douban.com/gallery/topic/152905/?from=discussing'    # 露台植物记
-    str_cookies = 'bid=q0zgvBVOcKI; douban-fav-remind=1; ll="108296"; _vwo_uuid_v2=DF0F7918D61BB7233A9D20A9B94314FDE|1132a421078a81034f2ee1b44e1287ac; gr_user_id=dc6e1a0e-662b-44e6-9544-3ad551b4b502; ct=y; viewed="10738023_4881639_5915365_1083428_2097249"; dbcl2="161289377:k8VtynNhjSo"; push_doumail_num=0; push_noty_num=0; ps=y; __utmv=30149280.16128; __utma=30149280.159925537.1599147897.1615317945.1615320310.26; __utmz=30149280.1615320310.26.23.utmcsr=douban.com|utmccn=(referral)|utmcmd=referral|utmcct=/channel/30168716/; ck=q0bA; ap_v=0,6.0; frodotk="8b6951657bf23140a23bf43073d693c0"'
 
     # @staticmethod
     # def make_cookies(str_cookies):

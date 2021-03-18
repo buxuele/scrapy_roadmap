@@ -3,11 +3,16 @@ __pycache__/
 venv/
 .idea/
 **/.scrapy/
-# utils/
+**/*.png
+163music.json
+**.json
+
+# 这个还是不能加进去。毕竟是个人文件居多。
+utils/
 
 **.log
+.gitignore
 
-ret.json
-ret2.json
 ZZZ.py
 delete_me.py
+utils/secret.txt
