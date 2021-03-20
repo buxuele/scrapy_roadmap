@@ -2,14 +2,17 @@ __pycache__/
 **/__pycache__/
 venv/
 .idea/
+reading/
 **/.scrapy/
 **/*.png
-163music.json
+data/163music.json
 **.json
 **/spider_name_01/
 
-# 这个还是不能加进去。毕竟是个人文件居多。
+# 这个还是不能加进去。毕竟是私人文件太多了。
 utils/
+
+data/
 
 **.log
 .gitignore
@@ -17,3 +20,4 @@ utils/
 ZZZ.py
 delete_me.py
 utils/secret.txt
+peter.py

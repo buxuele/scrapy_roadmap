@@ -6,7 +6,7 @@ from itemadapter import ItemAdapter
 import logging
 
 #  这个日志文件名称，会被全局的日志系统覆盖。但是要记录的内容会被记录下来。
-logger = logging.getLogger('download_result.log')
+logger = logging.getLogger(__file__)
 
 
 class WallpaperPipeline(ImagesPipeline):
@@ -22,5 +22,8 @@ class WallpaperPipeline(ImagesPipeline):
     def item_completed(self, results, item, info):
         for ok, x in results:
             if not ok:
-                logger.log(logging.WARNING, x['url'])
+                logger.error(logging.ERROR, x)
+                logger.error(logging.ERROR, ok)
+                logger.error(logging.ERROR, info)
+
         return item

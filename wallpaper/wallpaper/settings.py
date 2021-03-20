@@ -13,8 +13,7 @@ CONCURRENT_REQUESTS = 10
 CONCURRENT_REQUESTS_PER_DOMAIN = 10
 CONCURRENT_REQUESTS_PER_IP = 10
 
-TAG_NAME = "mall"           #   todo    city, park, china, dinner
-# 以下需要手动修改。
+TAG_NAME = "art"   # 修改这里即可。
 IMAGES_STORE = f'E:\爬虫结果\图片\\Unsplash_{TAG_NAME.capitalize()}400'
 
 ITEM_PIPELINES = {

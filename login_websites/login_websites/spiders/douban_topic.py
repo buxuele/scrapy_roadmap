@@ -18,10 +18,10 @@ from utils.secret import douban_cookies
 class DoubanSpider(scrapy.Spider):
     name = 'dou'
     allowed_domains = ['douban.com']
-    url = 'https://www.douban.com/gallery/topic/166889/'    # 收集有趣的商品陈列方式
+    url = 'https://www.douban.com/gallery/topic/84/?from=gallery_hot_post'
     custom_settings = {
         'ITEM_PIPELINES': {'login_websites.pipelines.SohuPipeline': 300,},
-        'IMAGES_STORE': f'E:\爬虫结果\图片\豆瓣话题_收集有趣的商品陈列方式3',
+        'IMAGES_STORE': f'E:\爬虫结果\图片\豆瓣话题_服装搭配指南',
     }
 
     @staticmethod

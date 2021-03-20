@@ -26,8 +26,6 @@ class SohuSpider(scrapy.Spider):
     str_cookies = sohu_cookies
     @staticmethod
     def make_cookies(str_cookies):
-        # 目前还是写一个解析的函数。
-        # todo 这里最好是能写一个中间件，单独来处理这些 cookies  整个项目都需要使用这些 cookies
         ret = {}
         for i in str_cookies.split('; '):
             idx = i.find('=')

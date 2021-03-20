@@ -14,3 +14,19 @@ class SouhuItem(scrapy.Item):
 #     singer = scrapy.Field()
 #     album = scrapy.Field()
 #     img_url = scrapy.Field()
+
+
+class JianShuItem(scrapy.Item):
+    author = scrapy.Field()
+    author_url = scrapy.Field()
+    title = scrapy.Field()
+    url = scrapy.Field()
+
+
+class ZhihuItem(scrapy.Item):
+    author = scrapy.Field()
+    author_url = scrapy.Field()
+    title = scrapy.Field()
+    url = scrapy.Field()
+
+
