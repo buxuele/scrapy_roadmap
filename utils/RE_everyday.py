@@ -56,7 +56,7 @@ def remove_dup():
 
 
 if __name__ == '__main__':
-    f = 'x.html'
+    f = 'more_x.html'
     html_url(html_file=f)
 
     # u = "http://pb.7mla.xyz/2048/read.php?tid-3185463-fpage-2.html"

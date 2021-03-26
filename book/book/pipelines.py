@@ -22,7 +22,7 @@ class BookPipeline:
         # return item
 
         # 3. 书名也需要作为一个变量传递进来。 这个更改 文件存储目录也是很方便的。
-        store_path = r'E:\爬虫结果\电子书\99藏书网_诺贝尔文学奖'
+        store_path = r'E:\爬虫结果\电子书\诗词名句网_古典文学与历史书'
         b_name = item['book_name'] + '.txt'
         file_name = f'{store_path}\\{b_name}'
 
@@ -34,9 +34,8 @@ class BookPipeline:
             f.write('\n' * 5)
         return item
 
-    # todo 这里有点行不通了。先搁置。
-    # 3. 看看别人是怎么写的，以及内建的方法是怎么写的。
-    # 这里其实也只是尝试而已。
+
+
     # 如果按照这种写法，那么必须新建一个文件，每一本书，返回全部的章节urls
     # def get_media_requests(self, item, info):
     #     for a_url in item["chapter_urls"]:

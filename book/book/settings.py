@@ -15,7 +15,7 @@ ITEM_PIPELINES = {
 
 DOWNLOADER_MIDDLEWARES = {
    'book.middlewares.BookDownloaderMiddleware': 543,
-   'book.proxy_middleware.ProxyMiddleware': 125,
+   # 'book.proxy_middleware.ProxyMiddleware': 125,
 }
 
 DOWNLOAD_DELAY = 0
@@ -41,11 +41,11 @@ SELENIUM_HEADLESS = True
 SELENIUM_DRIVER_PAGE_LOAD_TIMEOUT = 30
 
 
-# HTTPCACHE_ENABLED = True
-# HTTPCACHE_EXPIRATION_SECS = 0
-# HTTPCACHE_DIR = 'httpcache'
-# HTTPCACHE_IGNORE_HTTP_CODES = []
-# HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+HTTPCACHE_ENABLED = True
+HTTPCACHE_EXPIRATION_SECS = 0
+HTTPCACHE_DIR = 'httpcache'
+HTTPCACHE_IGNORE_HTTP_CODES = []
+HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 # 日志 log  调试的时候，最好还是不要用log 文件。
 # LOG_FILE = f"{str(int(time.time()))}.log"

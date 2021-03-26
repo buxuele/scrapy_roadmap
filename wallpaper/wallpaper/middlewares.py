@@ -2,6 +2,10 @@ from scrapy import signals
 
 # useful for handling different item types with a single interface
 from itemadapter import is_item, ItemAdapter
+import logging
+
+#  这个日志文件名称，会被全局的日志系统覆盖。但是要记录的内容会被记录下来。
+logger = logging.getLogger(__name__)
 
 
 class WallpaperSpiderMiddleware:
@@ -25,7 +29,9 @@ class WallpaperSpiderMiddleware:
             yield i
 
     def process_spider_exception(self, response, exception, spider):
-        pass
+        spider.logger.error(exception)
+        spider.logger.error(response.url)
+
 
     def process_start_requests(self, start_requests, spider):
         for r in start_requests:

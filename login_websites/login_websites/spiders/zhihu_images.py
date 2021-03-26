@@ -23,6 +23,17 @@ class ZhihuSpider(scrapy.Spider):
 
     """
     # 从个人主页进来就是 xhr,  且 api 没什么具体规则。而且从的别处发送了请求数据。
+    
+
+https://www.zhihu.com/api/v3/moments/fan-fan-85-56-77/activities?limit=7&session_id=1277708637159219200&after_id=1546044482&desktop=true
+https://www.zhihu.com/api/v3/moments/fan-fan-85-56-77/activities?limit=7&session_id=1277708637159219200&after_id=1575352338&desktop=true
+https://www.zhihu.com/api/v3/moments/fan-fan-85-56-77/activities?limit=7&session_id=1277708637159219200&after_id=1604662134&desktop=true
+https://www.zhihu.com/api/v3/moments/fan-fan-85-56-77/activities?limit=7&session_id=1277708637159219200&after_id=1615045967&desktop=true
+
+https://www.zhihu.com/api/v3/moments/newbacon/activities?limit=7&session_id=1277708637159219200&after_id= 1615790078 &desktop=true
+https://www.zhihu.com/api/v3/moments/newbacon/activities?limit=7&session_id=1277708637159219200&after_id= 1615259611 &desktop=true
+https://www.zhihu.com/api/v3/moments/newbacon/activities?limit=7&session_id=1277708637159219200&after_id= 1614589260 &desktop=true 
+    
     """
 
     @staticmethod

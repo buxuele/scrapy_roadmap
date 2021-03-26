@@ -17,7 +17,7 @@ from utils.secret import jianshu_cookies as str_cookies
 """
 1. 从首页入手，抓取首页的文章 list_A。
 2. 然后依次访问 list_A, 每遇到新的文章，加入 list_A. 这里涉及去重。
-3. 如果总访问页面达到了 1000， 则停止。
+3. 如果总访问页面达到了 2W， 则停止。
 4. 结果保存为 json，别忘了设置 FEED_EXPORT_ENCODING = 'utf-8'，不然结果很难看。
 """
 
@@ -27,7 +27,7 @@ class SohuSpider(scrapy.Spider):
     allowed_domains = ['jianshu.com']
     home = 'https://www.jianshu.com'
     custom_settings = {
-        'CLOSESPIDER_ITEMCOUNT': '1000',
+        'CLOSESPIDER_ITEMCOUNT': '50000',
         'ITEM_PIPELINES': None,     # 直接命令行保存数据，json
     }
 
@@ -45,7 +45,8 @@ class SohuSpider(scrapy.Spider):
     # 首页
     def start_requests(self):
         cookies = self.make_cookies(str_cookies)
-        yield Request(self.home, cookies=cookies, callback=self.parse_post)
+        # yield Request(self.home, cookies=cookies, callback=self.parse_post)
+        yield Request(self.home, callback=self.parse_post)
 
     # 首页下的每一页
     def parse_post(self, response, **kwargs):

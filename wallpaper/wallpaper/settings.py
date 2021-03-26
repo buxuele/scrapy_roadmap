@@ -8,12 +8,12 @@ NEWSPIDER_MODULE = 'wallpaper.spiders'
 ROBOTSTXT_OBEY = False
 COOKIES_ENABLED = False    # 可以防止被ban
 
-DOWNLOAD_DELAY = 1
-CONCURRENT_REQUESTS = 10
-CONCURRENT_REQUESTS_PER_DOMAIN = 10
-CONCURRENT_REQUESTS_PER_IP = 10
+DOWNLOAD_DELAY = 0
+CONCURRENT_REQUESTS = 30
+CONCURRENT_REQUESTS_PER_IP = 30
+CONCURRENT_REQUESTS_PER_DOMAIN = 30
 
-TAG_NAME = "art"   # 修改这里即可。
+TAG_NAME = "Formula one"   # 修改这里即可
 IMAGES_STORE = f'E:\爬虫结果\图片\\Unsplash_{TAG_NAME.capitalize()}400'
 
 ITEM_PIPELINES = {
@@ -39,13 +39,13 @@ DEFAULT_REQUEST_HEADERS = {
 # 调试的时候，最好还是不要用log 文件。 因为没法实时地看到错误。
 # 如果文件成熟之后，需要使用日志来记录错误信息。
 # Default: DEBUG，  INFO  WARNING  ERROR CRITICAL
-LOG_LEVEL = 'WARNING'
+LOG_LEVEL = 'INFO'
 LOG_ENABLED = True
 LOG_FILE = f'{BOT_NAME}_{time.strftime("%Y-%m-%d_%H-%M-%S")}.log'
 
 # 开启这几项缓存 加快了本地调试速度，也减轻了 网站的压力
-HTTPCACHE_ENABLED = True
-HTTPCACHE_EXPIRATION_SECS = 0
-HTTPCACHE_DIR = 'httpcache'
-HTTPCACHE_IGNORE_HTTP_CODES = []
-HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+# HTTPCACHE_ENABLED = True
+# HTTPCACHE_EXPIRATION_SECS = 0
+# HTTPCACHE_DIR = 'httpcache'
+# HTTPCACHE_IGNORE_HTTP_CODES = []
+# HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'

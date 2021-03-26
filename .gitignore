@@ -4,7 +4,11 @@ venv/
 .idea/
 reading/
 **/.scrapy/
+requests_JS/
+
+# 这种写法是正确的。
 **/*.png
+
 data/163music.json
 **.json
 **/spider_name_01/
@@ -14,10 +18,7 @@ utils/
 
 data/
 
-**.log
+**/*.log
 .gitignore
-
 ZZZ.py
-delete_me.py
 utils/secret.txt
-peter.py

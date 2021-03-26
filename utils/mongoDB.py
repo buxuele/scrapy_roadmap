@@ -99,7 +99,7 @@ class Mongo:
 
 if __name__ == '__main__':
     # m = Mongo("china", "y7")
-    m = Mongo("proxies_db", "proxies_coll")               # 17231
+    m = Mongo("python_daily", "python_ideas")               # 17231
     # m = Mongo('github', 'a1')
 
     m.show_data()
