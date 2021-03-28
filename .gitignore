@@ -2,23 +2,29 @@ __pycache__/
 **/__pycache__/
 venv/
 .idea/
-reading/
 **/.scrapy/
-requests_JS/
-
-# 这种写法是正确的。
-**/*.png
-
-data/163music.json
-**.json
 **/spider_name_01/
 
 # 这个还是不能加进去。毕竟是私人文件太多了。
 utils/
 
+# 这个小项目暂时先自留吧。
+text_data/
+
+# 暂时不加进去。
+shopping/
+
+
 data/
+reading/
+requests_JS/
+
+# 这种写法是正确的。
+**/*.png
+**.json
 
 **/*.log
 .gitignore
 ZZZ.py
-utils/secret.txt
+github.py
+

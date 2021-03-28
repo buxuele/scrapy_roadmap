@@ -4,7 +4,6 @@
 # contact: fanchuangwater@gmail.com
 # about: 爬取简书的文章标题，随机漫步，不做过多的限定，只是练习。
 
-
 import re
 import json
 import scrapy

@@ -34,7 +34,6 @@ class CheckProxy:
         resp = requests.get(target)
         return resp.json()["origin"]
 
-    # 这种删除方式不科学，导致我的代理没法用。还是需要再看看。todo
     def check_status(self, dic):
         url = "http://httpbin.org/ip"
         p = {f'{dic["protocol"].lower()}': f'{dic["protocol"].lower()}://{dic["ip"]}:{dic["port"]}'}
@@ -43,9 +42,6 @@ class CheckProxy:
         # 当前使用的代理 != 真实的ip: 代理是有效的。
         if resp.status_code == 200 and resp.json()["origin"] != self.real_ip:
             self.good.append(dic)
-        # else:
-            # 这里的执行是有问题的，我猜原因是 用多线程来操作数据库是不安全的。所以很多操作都不成功。todo 待验证。
-            # self.coll.delete_one({'_id': ObjectId(this_id)})
 
     def run(self):
         t1 = self.db[self.coll_name].count_documents({})

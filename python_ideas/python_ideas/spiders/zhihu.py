@@ -10,11 +10,8 @@ import scrapy
 from scrapy import Request
 from python_ideas.items import PythonIdeasItem
 
-
 """
-通过对 api 的解析，试着去理解知乎这个网站在【数据结构上的设计】:
-1. 比如问题与答案的关系。
-2. 以及与用户的关系。
+知乎的分页是把，下一页的链接放在了当前这页里面。只能链式爬取。
 """
 
 

@@ -4,7 +4,6 @@
 # contact: fanchuangwater@gmail.com
 # about:  爬取搜狐上 赵孟頫的书法图片。
 
-
 import re
 import json
 import scrapy

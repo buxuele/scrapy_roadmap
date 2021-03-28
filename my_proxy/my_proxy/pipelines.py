@@ -1,16 +1,6 @@
-# Define your item pipelines here
-#
-# Don't forget to add your pipeline to the ITEM_PIPELINES setting
-# See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-
-
-# useful for handling different item types with a single interface
-from itemadapter import ItemAdapter
 import pymongo
 
 
-# todo  也许这种写法有点繁琐，但是目前还是这样吧，以后再看看怎么修改
-# 使用框架的话， 难免有些地方是固定的。
 class MongoPipeline:
     collection = 'proxies_coll'
 
@@ -34,7 +24,7 @@ class MongoPipeline:
         )
 
     def process_item(self, item, spider):
-        coll = self.db[self.collection]         # 就是最初的 collection = 'raw_proxies'
+        coll = self.db[self.collection]
         data = dict(item)
         coll.insert_one(data)
         return item

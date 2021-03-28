@@ -13,7 +13,7 @@ CONCURRENT_REQUESTS = 30
 CONCURRENT_REQUESTS_PER_IP = 30
 CONCURRENT_REQUESTS_PER_DOMAIN = 30
 
-TAG_NAME = "Formula one"   # 修改这里即可
+TAG_NAME = "sofa"   # 修改这里即可
 IMAGES_STORE = f'E:\爬虫结果\图片\\Unsplash_{TAG_NAME.capitalize()}400'
 
 ITEM_PIPELINES = {

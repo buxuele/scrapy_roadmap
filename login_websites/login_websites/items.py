@@ -10,6 +10,9 @@ class SouhuItem(scrapy.Item):
     image_urls = scrapy.Field()
 
 
+class PengpaiItem(scrapy.Item):
+    image_urls = scrapy.Field()
+
 # class NeteaseMusicItem(scrapy.Item):
 #     singer = scrapy.Field()
 #     album = scrapy.Field()
@@ -24,9 +27,11 @@ class JianShuItem(scrapy.Item):
 
 
 class ZhihuItem(scrapy.Item):
-    author = scrapy.Field()
-    author_url = scrapy.Field()
-    title = scrapy.Field()
-    url = scrapy.Field()
+    image_urls = scrapy.Field()
+
+    # author = scrapy.Field()
+    # author_url = scrapy.Field()
+    # title = scrapy.Field()
+    # url = scrapy.Field()
 
 
